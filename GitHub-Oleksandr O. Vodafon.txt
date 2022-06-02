@@ -1,0 +1,121 @@
+	1. На локальном репозитории сделать ветки для:
+- Postman
+- Jmeter
+- CheckLists
+- Bag Reports
+- SQL
+- Charles
+- Mobile testing
+
+git branch Postman
+git branch Jmeter 
+…
+
+	2. Запушить все ветки на внешний репозиторий
+git push -u --all
+Counting objects: 6, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 752 bytes | 752.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To github.com:Nevedimca/GitHub.git
+   e01ac49..9e814d9  main -> main
+ * [new branch]      Bag_Reports -> Bag_Reports
+ * [new branch]      Charles -> Charles
+ * [new branch]      CheckLists -> CheckLists
+ * [new branch]      Jmeter -> Jmeter
+ * [new branch]      Mobile_testing -> Mobile_testing
+ * [new branch]      Postman -> Postman
+ * [new branch]      SQL -> SQL
+Branch main set up to track remote branch main from origin.
+Branch Bag_Reports set up to track remote branch Bag_Reports from origin.
+Branch Charles set up to track remote branch Charles from origin.
+Branch CheckLists set up to track remote branch CheckLists from origin.
+Branch Jmeter set up to track remote branch Jmeter from origin.
+Branch Mobile_testing set up to track remote branch Mobile_testing from origin.
+Branch Postman set up to track remote branch Postman from origin.
+Branch SQL set up to track remote branch SQL from origin.
+
+	3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+(Main)git checkout Bag_Reports
+
+(Bag_Reports)> cat > bug_report.txt
+title: Wellcome is spelled incorrectly
+description: You should change it to 'Welcome'
+^C⏎                                                    
+	4. Запушить структуру багрепорта на внешний репозиторий
+macssd@Oleksandrs-iMac /V/M/C/T/GitHub (Bag_Reports)> git add .
+macssd@Oleksandrs-iMac /V/M/C/T/GitHub (Bag_Reports)> git commit -m "add bug_report.txt "
+[Bag_Reports 12c4337] add bug_report.txt
+ 1 file changed, 2 insertions(+)
+ create mode 100644 bug_report.txt
+macssd@Oleksandrs-iMac /V/M/C/T/GitHub (Bag_Reports)> git push
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 421 bytes | 421.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:Nevedimca/GitHub.git
+   9e814d9..12c4337  Bag_Reports -> Bag_Reports
+
+	5. Вмержить ветку Bag Reports в Main
+> git checkout main >
+
+macssd@Oleksandrs-iMac /V/M/C/T/GitHub (main)> git merge Bag_Reports -m "merge Bag_Reports"
+Updating 9e814d9..12c4337
+Fast-forward (no commit created; -m option ignored)
+ bug_report.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 bug_report.txt
+
+	6. Запушить main на внешний репозиторий.
+macssd@Oleksandrs-iMac /V/M/C/T/GitHub (main)> git push
+Total 0 (delta 0), reused 0 (delta 0)
+To github.com:Nevedimca/GitHub.git
+   9e814d9..12c4337  main -> main
+
+	7. В ветке CheckLists набросать структуру чек листа.
+>git checkout CheckLists>
+
+macssd@Oleksandrs-iMac /V/M/C/T/GitHub (CheckLists)> cat > ChekList_IN
+2022/03/07 OK.
+2022/03/15 OK.
+2022/03/29 OK.
+2022/04/08 OK.
+2022/04/21 OK.
+2022/05/11 OK.
+2022/05/27 OK.
+2022/06/02 OK.    
+
+	8. Запушить структуру на внешний репозиторий
+> git add . > git commit -m "add ChekList_IN “>
+
+macssd@Oleksandrs-iMac /V/M/C/T/GitHub (CheckLists)> git push 
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 395 bytes | 395.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:Nevedimca/GitHub.git
+   9e814d9..ca64f72  CheckLists -> CheckLists
+
+
+	9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+https://github.com/Nevedimca/GitHub/pull/
+> comprare pull request> add cheklist_in v main > merge pull request>
+
+https://github.com/Nevedimca/GitHub/pull/1
+
+	10. Синхронизировать Внешнюю и Локальную ветки Main
+git checkout main > git fetch > 
+macssd@Oleksandrs-iMac /V/M/C/T/GitHub (main) [1]> git pull
+Updating 12c4337..c378cbc
+Fast-forward
+ ChekList_IN | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ create mode 100644 ChekList_IN
+
+
+
+
+
